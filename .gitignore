@@ -1,4 +1,5 @@
 *.flac
+*.mp3
 *.wav
 *.asv
 tests/
