@@ -12,6 +12,15 @@ analyze_all = false;        % Metti 'true' per analizzare TUTTO il file (LENTO!)
 fprintf('Caricamento di %s...\n', audioFile);
 [y_full, Fs] = audioread(audioFile);
 
+% Analisi Globale (Fuori dal ciclo)
+disp('Generazione grafico intero file...');
+
+% Calcola la FFT su TUTTO il segnale y
+X_total = fft(y_full); 
+
+% Passa 'y' intero e la sua FFT
+plotSpecsBilateral(y_full, X_total, Fs, 'Analisi Globale Intero Brano');
+
 % Prendiamo solo i primi 30 secondi come da specifiche (o tutto se minore)
 max_duration = 30; 
 samples_limit = min(length(y_full), max_duration * Fs);
