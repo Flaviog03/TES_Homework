@@ -2,8 +2,9 @@
 clc; clear; close all;
 addpath('functions'); % Assicuriamoci che le funzioni siano visibili
 addpath('data')
+
 % Configurazioni Utente
-audioFile = 'rock.flac';    % Cambia con 'classic.flac' per l'altro brano
+audioFile = 'rock2.flac';    % Cambia con 'classic.flac' per l'altro brano
 M = 0.5;                    % Durata finestra in secondi (es. 0.5s o 1.0s) [cite: 7]
 analyze_all = false;        % Metti 'true' per analizzare TUTTO il file (LENTO!)
 
