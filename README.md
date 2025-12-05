@@ -15,7 +15,9 @@ Il progetto è organizzato nelle seguenti cartelle e script:
 ├── main.m                  # Script principale per l'elaborazione audio
 ├── functions/              # Libreria di funzioni personalizzate
 │   ├── myDft.m             # Implementazione manuale della DFT
-│   └── plotSpecs.m         # Funzione per la visualizzazione grafica
+│   └── plotSpecs.m         # Funzione per la visualizzazione grafica di dft e fft
+|   |__ plotSpecsFull.m     # Funzione per la visualizzazione grafica del segnale nel tempo e dello spettro di energia
+|   |__ zombie.m            # Funzione per la visualizzazione grafica specifica per il brano zombie
 ├── tests/                  # Script di test e validazione
 │   └── test_dft_validation.m
 ├── data/                   # Cartella per i file audio (ignorata da git)
