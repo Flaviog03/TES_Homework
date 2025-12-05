@@ -4,7 +4,7 @@ close all;
 addpath('functions'); 
 addpath('data')
 
-audioFile = 'rock.mp3';  % 'rock.flac' o 'classic.flac'  
+audioFile = 'classic.flac';  % 'rock.flac' o 'classic.flac'  
 M = 0.7; % durata finestre in secondi                    
 analyze_all = false; % 'true' per analizzare tutte le finestre 
 max_duration = 30; % limitiamo l'analisi del segnale audio ai primi 30s
@@ -20,6 +20,12 @@ if strcmp(audioFile, 'rock.mp3')
     zombie(y_r, M, Fs, 2*60 + 34); % finestra solo voce
     zombie(y_r, M, Fs, 2*60 + 15); % finestra strumenti (1)
     zombie(y_r, M, Fs, 3*60 + 45); % finestra strumenti (2)
+end
+
+% per classic: grafici aggiuntivi
+if strcmp(audioFile, 'classic.flac')
+    classic(y_r, M, Fs, 0*60 + 40); % finestra solo voce
+    classic(y_r, M, Fs, 3*60 + 40); % finestra strumenti
 end
 
 fprintf('Frequenza Campionamento: %d Hz\n', Fs);
