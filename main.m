@@ -4,7 +4,7 @@ close all;
 addpath('functions'); 
 addpath('data')
 
-audioFile = 'classic.flac';  % 'rock.flac' o 'classic.flac'  
+audioFile = 'rock.mp3';  % 'rock.flac' o 'classic.flac'  
 M = 0.7; % durata finestre in secondi                    
 analyze_all = false; % 'true' per analizzare tutte le finestre 
 max_duration = 30; % limitiamo l'analisi del segnale audio ai primi 30s
@@ -50,18 +50,18 @@ times_fft = zeros(1, num_windows);
 limit_loop = num_windows;
 if ~analyze_all
     limit_loop = 2; % modificabile 
-    fprintf('\n[MODALITA TEST] Analisi limitata alle prime %d finestre.\n', limit_loop);
+    fprintf('\n[MODALITA TEST] Analisi limitata alle prime %d finestre.\n', limit_loop+1);
     fprintf('Imposta analyze_all = true per processare tutto il file.\n');
 end
 
-id_w = 3; % modificabile, è la finestra da cui si parte
+id_w = 148; % modificabile, è la finestra da cui si parte
 
 % ciclo sulle finestre
 for i = id_w:(limit_loop+id_w)
     
     start_idx = (i-1) * N_window + 1;
     end_idx = start_idx + N_window - 1;
-    xn = y(start_idx:end_idx); % contiene i campioni della finestra selezionata
+    xn = y_r(start_idx:end_idx); % contiene i campioni della finestra selezionata
     
     fprintf('\n--- Analisi Finestra %d/%d (Intervallo: %.2f - %.2f s) ---\n', ...
         i, num_windows, (i-1)*M, i*M);
