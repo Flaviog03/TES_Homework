@@ -18,14 +18,14 @@ X_r = fft(y_r); % fft del canale destro (durata completa)
 % per zombie: grafici aggiuntivi
 if strcmp(audioFile, 'rock.mp3')
     zombie(y_r, M, Fs, 2*60 + 34); % finestra solo voce
-    zombie(y_r, M, Fs, 2*60 + 15); % finestra strumenti (1)
+    % zombie(y_r, M, Fs, 2*60 + 15); % finestra strumenti (1)
     zombie(y_r, M, Fs, 3*60 + 45); % finestra strumenti (2)
 end
 
 % per classic: grafici aggiuntivi
 if strcmp(audioFile, 'classic.flac')
-    classic(y_r, M, Fs, 0*60 + 40); % finestra solo voce
-    classic(y_r, M, Fs, 3*60 + 40); % finestra strumenti
+    classic(y_r, M, Fs, 0*60 + 40); % finestra più lenta
+    classic(y_r, M, Fs, 3*60 + 40); % finestra più vivace
 end
 
 fprintf('Frequenza Campionamento: %d Hz\n', Fs);

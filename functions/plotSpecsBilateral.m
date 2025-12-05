@@ -15,7 +15,7 @@ function plotSpecsBilateral(xn, X_fft, fs, titolo)
     plot(t_axis, xn, 'r');
     title(['Dominio del Tempo - ' titolo]);
     xlabel('Tempo (s)'); 
-    ylabel('Ampiezza');
+    ylabel('Ampiezza (a.u.)'); % Modificato
     grid on;
     xlim([0 max(t_axis)]); 
     
@@ -23,7 +23,7 @@ function plotSpecsBilateral(xn, X_fft, fs, titolo)
     plot(f_axis_kHz, 10*log10(energy_spectrum + eps), 'g');
     title(['Dominio della Frequenza (Spettro Bilaterale)']);
     xlabel('Frequenza (kHz)'); 
-    ylabel('Energia (dB)');
+    ylabel('Energia (dB a.u.)'); % Modificato
     grid on;
     xlim([min(f_axis_kHz) max(f_axis_kHz)]);
        
